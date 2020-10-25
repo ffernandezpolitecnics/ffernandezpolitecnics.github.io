@@ -2,4 +2,4 @@
 
 ## Esto es una prueba
 
-![alt](https://github.com/ffernandezpolitecnics/ffernandezpolitecnics.github.io/tree/master/img/fran.png)
+![alt](https://github.com/ffernandezpolitecnics/ffernandezpolitecnics.github.io/blob/master/img/fran.png)
