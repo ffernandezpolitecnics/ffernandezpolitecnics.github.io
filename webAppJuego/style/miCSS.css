@@ -1,0 +1,19 @@
+.tablero {
+    position: relative;
+    margin: auto;
+    background-color: black;
+    border: black 10px solid;
+    width: 1000px;
+    height: 600px;
+    box-sizing: border-box;
+}
+
+.come-cocos {
+    position: absolute;
+    /* bottom: 10px;
+    left: 10px; */
+    width: 40px;
+    height: 40px;
+    background-image: url("../media/img/pacman.gif");
+    background-size: contain;
+}
