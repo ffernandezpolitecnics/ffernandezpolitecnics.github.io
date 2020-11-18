@@ -3,7 +3,7 @@
     margin: auto;
     background-color: black;
     border: black 10px solid;
-    width: 1000px;
+    width: 1020px;
     height: 600px;
     box-sizing: border-box;
 }
@@ -16,6 +16,14 @@
     height: 40px;
     background-image: url("../media/img/pacman.gif");
     background-size: contain;
+}
+
+.muro-horizontal {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+    box-sizing: border-box;
 }
 
 .inferior {
