@@ -59,6 +59,10 @@ botonDerecha.addEventListener('mousedown', function () {
     teclasApretadas['ArrowRight'] = true;
 });
 
+botonDerecha.addEventListener('touchstart', function () {
+    teclasApretadas['ArrowRight'] = true;
+});
+
 botonIzquierda.addEventListener('mousedown', function () {
     teclasApretadas['ArrowLeft'] = true;
 });
@@ -76,6 +80,10 @@ window.addEventListener('keyup', function (evt) {
 });
 
 botonDerecha.addEventListener('mouseup', function () {
+    teclasApretadas['ArrowRight'] = false;
+});
+
+botonDerecha.addEventListener('touchend', function () {
     teclasApretadas['ArrowRight'] = false;
 });
 
