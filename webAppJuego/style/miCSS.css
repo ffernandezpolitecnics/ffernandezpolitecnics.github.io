@@ -17,3 +17,13 @@
     background-image: url("../media/img/pacman.gif");
     background-size: contain;
 }
+
+.inferior {
+    position: relative;
+    margin: 10px auto auto auto;
+    /* background-color: black; */
+    /* border: black 10px solid; */
+    width: 1000px;
+    height: 65px;
+    box-sizing: border-box;
+}
