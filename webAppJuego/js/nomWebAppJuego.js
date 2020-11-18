@@ -66,12 +66,21 @@ botonDerecha.addEventListener('touchstart', function () {
 botonIzquierda.addEventListener('mousedown', function () {
     teclasApretadas['ArrowLeft'] = true;
 });
+botonIzquierda.addEventListener('touchstart', function () {
+    teclasApretadas['ArrowLeft'] = true;
+});
 
 botonArriba.addEventListener('mousedown', function () {
     teclasApretadas['ArrowUp'] = true;
 });
+botonArriba.addEventListener('touchstart', function () {
+    teclasApretadas['ArrowUp'] = true;
+});
 
 botonAbajo.addEventListener('mousedown', function () {
+    teclasApretadas['ArrowDown'] = true;
+});
+botonAbajo.addEventListener('touchstart', function () {
     teclasApretadas['ArrowDown'] = true;
 });
 
@@ -90,12 +99,22 @@ botonDerecha.addEventListener('touchend', function () {
 botonIzquierda.addEventListener('mouseup', function () {
     teclasApretadas['ArrowLeft'] = false;
 });
+botonIzquierda.addEventListener('touchend', function () {
+    teclasApretadas['ArrowLeft'] = false;
+});
+
 
 botonArriba.addEventListener('mouseup', function () {
     teclasApretadas['ArrowUp'] = false;
 });
+botonArriba.addEventListener('touchend', function () {
+    teclasApretadas['ArrowUp'] = false;
+});
 
 botonAbajo.addEventListener('mouseup', function () {
+    teclasApretadas['ArrowDown'] = false;
+});
+botonAbajo.addEventListener('touchend', function () {
     teclasApretadas['ArrowDown'] = false;
 });
 
