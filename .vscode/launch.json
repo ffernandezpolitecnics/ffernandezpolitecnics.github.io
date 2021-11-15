@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "http://localhost:8080/DWEC/ffernandezpolitecnics.github.io/webAppFran/",
+            "url": "http://localhost:8080/ffernandezpolitecnics.github.io/webAppJuego/",
             "webRoot": "${workspaceFolder}"
         },
     ]

@@ -1,17 +1,17 @@
-var tablero = document.getElementById('tablero');
-var comeCocos = document.getElementById('come-cocos');
-comeCocos.style.bottom = "10px";
-comeCocos.style.left = "10px";
-var maxAncho = tablero.offsetWidth - comeCocos.offsetWidth -20;
-var maxAlto = tablero.offsetHeight - comeCocos.offsetWidth - 20;
+// var tablero = document.getElementById('tablero');
+// var comeCocos = document.getElementById('come-cocos');
+// comeCocos.style.bottom = "10px";
+// comeCocos.style.left = "10px";
+// var maxAncho = tablero.offsetWidth - comeCocos.offsetWidth -20;
+// var maxAlto = tablero.offsetHeight - comeCocos.offsetWidth - 20;
 
-var teclasApretadas = {};
-var distancia = 3;
+// var teclasApretadas = {};
+// var distancia = 3;
 
-var botonDerecha = document.getElementById("derecha");
-var botonIzquierda = document.getElementById("izquierda");
-var botonArriba = document.getElementById("arriba");
-var botonAbajo = document.getElementById("abajo");
+// var botonDerecha = document.getElementById("derecha");
+// var botonIzquierda = document.getElementById("izquierda");
+// var botonArriba = document.getElementById("arriba");
+// var botonAbajo = document.getElementById("abajo");
 
 function calularNuevaPos(posAnterior, code1, code2, max) {
 
@@ -33,7 +33,20 @@ function calularNuevaPos(posAnterior, code1, code2, max) {
         posNueva = max;
     }
 
-    if (teclasApretadas['ArrowUp']) {
+
+    if (teclasApretadas['ArrowUp'] && teclasApretadas['ArrowRight']) {
+        comeCocos.style.transform = 'rotate(-45deg)';
+    }
+    else if (teclasApretadas['ArrowUp'] && teclasApretadas['ArrowLeft']) {
+        comeCocos.style.transform = 'rotate(-135deg)';
+    }
+    else if (teclasApretadas['ArrowDown'] && teclasApretadas['ArrowRight']) {
+        comeCocos.style.transform = 'rotate(45deg)';
+    }
+    else if (teclasApretadas['ArrowDown'] && teclasApretadas['ArrowLeft']) {
+        comeCocos.style.transform = 'rotate(135deg)';
+    }
+    else if (teclasApretadas['ArrowUp']) {
         comeCocos.style.transform = 'rotate(-90deg)';
     }
     else if (teclasApretadas['ArrowDown']) {
@@ -42,81 +55,82 @@ function calularNuevaPos(posAnterior, code1, code2, max) {
     else if (teclasApretadas['ArrowLeft']) {
         comeCocos.style.transform = 'rotate(180deg)';
     }
-    else if (teclasApretadas['ArrowRight']){
+    else if (teclasApretadas['ArrowRight']) {
         comeCocos.style.transform = 'rotate(0deg)';
     }
-        
-    
+   
+
+
     return posNueva + "px";
-    
+
 }
 
-window.addEventListener('keydown', function (evt) {
-    teclasApretadas[evt.code] = true;
-});
+// window.addEventListener('keydown', function (evt) {
+//     teclasApretadas[evt.code] = true;
+// });
 
-botonDerecha.addEventListener('mousedown', function () {
-    teclasApretadas['ArrowRight'] = true;
-});
+// botonDerecha.addEventListener('mousedown', function () {
+//     teclasApretadas['ArrowRight'] = true;
+// });
 
-botonDerecha.addEventListener('touchstart', function () {
-    teclasApretadas['ArrowRight'] = true;
-});
+// botonDerecha.addEventListener('touchstart', function () {
+//     teclasApretadas['ArrowRight'] = true;
+// });
 
-botonIzquierda.addEventListener('mousedown', function () {
-    teclasApretadas['ArrowLeft'] = true;
-});
-botonIzquierda.addEventListener('touchstart', function () {
-    teclasApretadas['ArrowLeft'] = true;
-});
+// botonIzquierda.addEventListener('mousedown', function () {
+//     teclasApretadas['ArrowLeft'] = true;
+// });
+// botonIzquierda.addEventListener('touchstart', function () {
+//     teclasApretadas['ArrowLeft'] = true;
+// });
 
-botonArriba.addEventListener('mousedown', function () {
-    teclasApretadas['ArrowUp'] = true;
-});
-botonArriba.addEventListener('touchstart', function () {
-    teclasApretadas['ArrowUp'] = true;
-});
+// botonArriba.addEventListener('mousedown', function () {
+//     teclasApretadas['ArrowUp'] = true;
+// });
+// botonArriba.addEventListener('touchstart', function () {
+//     teclasApretadas['ArrowUp'] = true;
+// });
 
-botonAbajo.addEventListener('mousedown', function () {
-    teclasApretadas['ArrowDown'] = true;
-});
-botonAbajo.addEventListener('touchstart', function () {
-    teclasApretadas['ArrowDown'] = true;
-});
+// botonAbajo.addEventListener('mousedown', function () {
+//     teclasApretadas['ArrowDown'] = true;
+// });
+// botonAbajo.addEventListener('touchstart', function () {
+//     teclasApretadas['ArrowDown'] = true;
+// });
 
-window.addEventListener('keyup', function (evt) {
-    teclasApretadas[evt.code] = false;
-});
+// window.addEventListener('keyup', function (evt) {
+//     teclasApretadas[evt.code] = false;
+// });
 
-botonDerecha.addEventListener('mouseup', function () {
-    teclasApretadas['ArrowRight'] = false;
-});
+// botonDerecha.addEventListener('mouseup', function () {
+//     teclasApretadas['ArrowRight'] = false;
+// });
 
-botonDerecha.addEventListener('touchend', function () {
-    teclasApretadas['ArrowRight'] = false;
-});
+// botonDerecha.addEventListener('touchend', function () {
+//     teclasApretadas['ArrowRight'] = false;
+// });
 
-botonIzquierda.addEventListener('mouseup', function () {
-    teclasApretadas['ArrowLeft'] = false;
-});
-botonIzquierda.addEventListener('touchend', function () {
-    teclasApretadas['ArrowLeft'] = false;
-});
+// botonIzquierda.addEventListener('mouseup', function () {
+//     teclasApretadas['ArrowLeft'] = false;
+// });
+// botonIzquierda.addEventListener('touchend', function () {
+//     teclasApretadas['ArrowLeft'] = false;
+// });
 
 
-botonArriba.addEventListener('mouseup', function () {
-    teclasApretadas['ArrowUp'] = false;
-});
-botonArriba.addEventListener('touchend', function () {
-    teclasApretadas['ArrowUp'] = false;
-});
+// botonArriba.addEventListener('mouseup', function () {
+//     teclasApretadas['ArrowUp'] = false;
+// });
+// botonArriba.addEventListener('touchend', function () {
+//     teclasApretadas['ArrowUp'] = false;
+// });
 
-botonAbajo.addEventListener('mouseup', function () {
-    teclasApretadas['ArrowDown'] = false;
-});
-botonAbajo.addEventListener('touchend', function () {
-    teclasApretadas['ArrowDown'] = false;
-});
+// botonAbajo.addEventListener('mouseup', function () {
+//     teclasApretadas['ArrowDown'] = false;
+// });
+// botonAbajo.addEventListener('touchend', function () {
+//     teclasApretadas['ArrowDown'] = false;
+// });
 
 setInterval(function () {
     comeCocos.style.left = calularNuevaPos(parseInt(comeCocos.style.left), "ArrowRight", "ArrowLeft", maxAncho);;
